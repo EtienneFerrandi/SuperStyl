@@ -1,3 +1,4 @@
+
 import sklearn.svm as sk
 import sklearn.metrics as metrics
 import sklearn.decomposition as decomp
@@ -184,6 +185,7 @@ def train_svm(train, test, cross_validate=None, k=10, dim_reduc=None, norms=True
         print(".......... Writing final predictions to FINAL_PREDICTIONS.csv ........")
         # Get the decision function too
         myclasses = pipe.classes_
+        print(myclasses)
         decs = pipe.decision_function(test)
         dists = {}
         for myclass in enumerate(myclasses):
